@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+
+  <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
+    <mat-icon aria-label="Drawer Menu" svgIcon="thumbs-up"></mat-icon>
+  </button>
+
+  <span>A .Net Blog</span>
+  <!--<span *ngIf="openIdConnectService.userAvaliable">{{openIdConnectService.user.profile.name}}</span>-->
+
+  <button mat-button [matMenuTriggerFor]="menu"></button>
+
+  <mat-menu #menu="matMenu">
+    <!--<button *ngIf="!openIdConnectService.userAvaliable" (click)="openIdConnectService.triggerSignIn()">Sing In</button>-->
+    <!--<button *ngIf="!openIdConnectService.userAvaliable" (click)="openIdConnectService.triggerSignOut()">Sing Out</button>-->
+  </mat-menu>
+</mat-toolbar>
