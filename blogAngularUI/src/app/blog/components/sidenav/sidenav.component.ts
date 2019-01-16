@@ -2,7 +2,7 @@ import {Component, NgZone, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDrawer} from "@angular/material";
 
-const SMALL_WIDTH_BREAKPOINT =700;
+const SMALL_WIDTH_BREAKPOINT =720;
 
 
 @Component({
@@ -12,7 +12,8 @@ const SMALL_WIDTH_BREAKPOINT =700;
 })
 export class SidenavComponent implements OnInit {
 
-  private mediaMatcher:MediaQueryList=matchMedia(`max-width:${SMALL_WIDTH_BREAKPOINT}px`);
+  private mediaMatcher:MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
+
   constructor(
     private router:Router,
     zone:NgZone
@@ -24,9 +25,11 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
 
     this.router.events.subscribe(()=>{
+
       if (this.isScreenSmall()){
         this.drawer.close();
       }
+
     });
 
   }

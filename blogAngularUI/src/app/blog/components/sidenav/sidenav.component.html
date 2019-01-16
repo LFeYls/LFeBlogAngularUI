@@ -1,6 +1,6 @@
 <mat-drawer-container class="app-sidenav-container" autosize>
   <mat-drawer #drawer class="app-sidenav mat-elevation-z10" [mode]="isScreenSmall()? 'over' : 'side' " [opened]="!isScreenSmall()">
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       Blog Demo
     </mat-toolbar>
     <mat-nav-list>
@@ -16,7 +16,7 @@
   </mat-drawer>
 
 <div class="app-sidenav-content">
-  <blog-toolbar></blog-toolbar>
+  <blog-toolbar (toggleSidenav)="drawer.toggle()"></blog-toolbar>
   <div class="wrapper">
     <router-outlet></router-outlet>
   </div>
